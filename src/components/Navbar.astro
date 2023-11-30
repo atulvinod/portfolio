@@ -1,5 +1,4 @@
 ---
-import GradientText from "./GradientText.astro";
 import NavbarLinks from "./NavbarLinks.astro";
 import SocialLinks from "./SocialLinks.astro";
 import Toggle from "./Toggle.astro";
@@ -18,6 +17,10 @@ import Toggle from "./Toggle.astro";
         display: block;
         top: 0;
         left: 0;
+    }
+
+    html[class='dark'] .toggle-container::before{
+        background-color: white;
     }
 </style>
 
