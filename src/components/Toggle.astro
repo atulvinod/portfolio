@@ -89,8 +89,8 @@ import dark from "../images/dark-mode.png";
     document
         .getElementById("dark-mode-toggle")
         ?.addEventListener("change", function (event) {
-            const isChecked = event?.target?.checked ?? false;
-            console.log(isChecked);
+            const checkbox = event.target as HTMLInputElement
+            const isChecked = checkbox.checked ;
             if (isChecked) {
                 setDarkMode();
                 localStorage.setItem("theme", "dark");
