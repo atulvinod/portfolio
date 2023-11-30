@@ -1,0 +1,60 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import mntn from "../images/mntn.png";
+import space from "../images/space.png";
+import store from "../images/store.png";
+import thullo from "../images/thullo.png";
+---
+
+<style>
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 500px 500px;
+        gap: 40px;
+    }
+</style>
+
+<section class="dark:text-white flex justify-evenly" id="projects">
+    <div class="text-center w-10/12">
+        <div class="pt-10">
+            <h1 class="text-5xl my-3 font-bold">Projects</h1>
+            <span>Things I've built so far</span>
+        </div>
+
+        <section class="project-grid mt-20">
+            <ProjectCard
+                title={"Thullo | Kanban Board"}
+                description={"A Kanban board with ability to assign tasks to teams, create new taskboards, multi-column layout and ability to drag and drop cards"}
+                preview_link={"https://thullo-4epa.onrender.com/"}
+                github_link={"https://github.com/atulvinod/thullo"}
+                image={thullo}
+                image_alt={"thullo store preview"}
+            />
+            <ProjectCard
+                title={"MNTN Travel"}
+                description={"A landing page for a travel company"}
+                preview_link={"https://shiny-kelpie-4a5625.netlify.app/"}
+                github_link={"https://github.com/atulvinod/mntn-website"}
+                image={mntn}
+                image_alt={"mntn website preview"}
+            />
+            <ProjectCard
+                title={"NASA Website"}
+                description={"A landing page for a website providing information about planets and astronauts who have led exploration missions."}
+                preview_link={"https://extraordinary-parfait-7b2146.netlify.app/"}
+                github_link={"https://github.com/atulvinod/space-tourism"}
+                image={space}
+                image_alt={"Space website preview"}
+            />
+            <ProjectCard
+                title={"CRWN clothing store"}
+                description={"A clothing store built using React and with Stripe Integration"}
+                preview_link={"https://helpful-faloodeh-164040.netlify.app/"}
+                github_link={"https://github.com/atulvinod/crwn-clothing"}
+                image={store}
+                image_alt={"CRWN clothing store preview"}
+            />
+        </section>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import GradientText from "./GradientText.astro";
+import NavbarLinks from "./NavbarLinks.astro";
+import SocialLinks from "./SocialLinks.astro";
+import Toggle from "./Toggle.astro";
+---
+
+<style>
+    .toggle-container {
+        position: relative;
+    }
+    .toggle-container::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        display: block;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<nav class="h-[70px] flex flex-row items-center justify-end w-10/12 mx-auto">
+    <div class="flex flex-row items-center justify-end w-100">
+        <NavbarLinks />
+        <SocialLinks />
+
+        <div class="pl-5 ml-5 toggle-container">
+            <Toggle />
+        </div>
+    </div>
+</nav>

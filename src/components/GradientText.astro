@@ -1,0 +1,20 @@
+---
+const { text } = Astro.props;
+---
+
+<style>
+    .text-gradient {
+        color: #a195e3;
+        background-image: -webkit-linear-gradient(
+            45deg,
+            #a195e3 0%,
+            #1739e1 33%,
+            #07a8fd 67%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+<p class="text-gradient">{text}</p>

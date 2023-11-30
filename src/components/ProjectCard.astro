@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import ProjectCardLinks from "./ProjectCardLinks.astro";
+
+const { title, description, image, preview_link, github_link, image_alt } =
+    Astro.props;
+---
+
+<style>
+    .project-card {
+        transition: all 0.5s;
+    }
+    .project-card:hover {
+        transform: scale(1.015);
+    }
+</style>
+
+<div
+    class="project-card rounded-2xl shadow-xl dark:bg-[#363636] flex flex-col overflow-hidden cursor-pointer"
+>
+    <div class="h-[50%]">
+        <Image
+            src={image}
+            alt={image_alt}
+            class:list={["object-cover", "h-[100%]", "w-[100%]"]}
+        />
+    </div>
+    <div class="p-5 flex-1 flex flex-col">
+        <div class="text-start flex-1">
+            <h1 class="font-medium text-2xl">{title}</h1>
+            <p>
+                {description}
+            </p>
+        </div>
+        <ProjectCardLinks
+            preview_link={preview_link}
+            github_link={github_link}
+        />
+    </div>
+</div>
