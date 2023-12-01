@@ -3,8 +3,14 @@ import GradientText from "../components/GradientText.astro";
 import Layout from "../components/Layout.astro";
 ---
 
+<style>
+    .contact-section-height{
+        min-height: calc(100vh - (10rem + 136px + 130px)); 
+    }
+</style>
+
 <Layout>
-    <div class="h-[50vh] flex flex-col items-center justify-center">
+    <div class="contact-section-height flex flex-col items-center justify-center">
         <p class="text-5xl font-bold dark:text-white">
             For any questions, reach out to me at
         </p>
