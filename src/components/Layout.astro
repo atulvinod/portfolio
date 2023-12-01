@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import { ViewTransitions } from "astro:transitions";
+import Loader from './loader/Loader.astro';
 ---
 
 <style is:global>
@@ -41,6 +42,7 @@ import { ViewTransitions } from "astro:transitions";
     </head>
 
     <body class="dark:bg-gray-900">
+        <Loader/>
         <main class="w-10/12 mx-auto">
             <Navbar />
             <slot />
@@ -48,6 +50,13 @@ import { ViewTransitions } from "astro:transitions";
         </main>
     </body>
     <script is:inline>
- 
-    </script>
+        document.addEventListener('astro:before-preparation', () => {
+          document.querySelector('#loader-container').classList.toggle('visible', true);
+          document.querySelector('#loader-container').classList.toggle('invisible', false);
+        });
+        document.addEventListener('astro:after-preparation', () => {
+            document.querySelector('#loader-container').classList.toggle('visible', false);
+          document.querySelector('#loader-container').classList.toggle('invisible', true);
+        });
+      </script>
 </html>
