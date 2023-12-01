@@ -1,0 +1,53 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import { ViewTransitions } from "astro:transitions";
+---
+
+<style is:global>
+    body {
+        font-family: "DM Sans", sans-serif;
+    }
+    html[class="dark"] .dark-mode-svg path {
+        fill: white !important;
+    }
+    html[class="light"] .dark-mode-svg path {
+        fill: black !important;
+    }
+</style>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Atul Vinod | Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap"
+            rel="stylesheet"
+        />
+        <ViewTransitions />
+        <script is:inline>
+            const STORAGE_KEY = "theme";
+
+            if (typeof localStorage !== "undefined") {
+                const LOCAL_THEME =
+                    localStorage.getItem(STORAGE_KEY) ?? "light";
+                document.documentElement.classList.add(LOCAL_THEME);
+            }
+        </script>
+    </head>
+
+    <body class="dark:bg-gray-900">
+        <main class="w-10/12 mx-auto">
+            <Navbar />
+            <slot />
+            <Footer />
+        </main>
+    </body>
+    <script is:inline>
+ 
+    </script>
+</html>

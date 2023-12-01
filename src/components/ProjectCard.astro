@@ -2,8 +2,15 @@
 import { Image } from "astro:assets";
 import ProjectCardLinks from "./ProjectCardLinks.astro";
 
-const { title, description, image, preview_link, github_link, image_alt } =
-    Astro.props;
+const {
+    title,
+    description,
+    image,
+    preview_link,
+    github_link,
+    image_alt,
+    tech = [],
+} = Astro.props;
 ---
 
 <style>
@@ -31,6 +38,9 @@ const { title, description, image, preview_link, github_link, image_alt } =
             <p>
                 {description}
             </p>
+        </div>
+        <div class="my-3 flex overflow-x-auto">
+            {tech.map((t:string) => <span class="px-2 py-1 border rounded-xl ml-2 text-sm">{t}</span>)}
         </div>
         <ProjectCardLinks
             preview_link={preview_link}

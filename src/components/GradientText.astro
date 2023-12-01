@@ -1,5 +1,5 @@
 ---
-const { text } = Astro.props;
+const { text ,classes = '' } = Astro.props;
 ---
 
 <style>
@@ -17,4 +17,4 @@ const { text } = Astro.props;
         -webkit-text-fill-color: transparent;
     }
 </style>
-<p class="text-gradient">{text}</p>
+<p class={`text-gradient ${classes}`}>{text}</p>

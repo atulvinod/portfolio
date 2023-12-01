@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import light from "../../images/light-mode.png";
+import dark from "../../images/dark-mode.png";
+import "./styles.css";
+---
+
+<div class="flex flex-row items-center">
+    <Image alt={"light mode"} src={light} class:list={["w-10", "h-10"]} />
+    <label class="mx-2">
+        <input type="checkbox" class="toggle-checkbox" id="dark-mode-toggle" />
+        <div class="toggle-switch"></div>
+    </label>
+    <Image alt={"dark mode"} src={dark} class:list={["w-9", "h-9"]} />
+</div>
+
+<script src="./darkModeToggle.ts"></script>

@@ -1,0 +1,59 @@
+---
+import AboutMeSections from "../components/AboutMeSections.astro";
+import Experience from "../components/Experience.astro";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout>
+    <section class="mt-20">
+        <AboutMeSections title={"About Me"}>
+            <div class="dark:text-white">
+                <p>
+                    I am Atul, an experienced software engineer who loves to
+                    create innovative solutions in the dynamic field of
+                    technology. After a couple of years working in startups like
+                    Keka and Infido, I honed my skills and knowledge in web
+                    development, which contributed a lot to the success of these
+                    companies.
+                </p>
+                <p class="mt-5">
+                    My journey in the world of software engineering began as a
+                    hobby at a young age, and over the years, evolved into a
+                    deep love for coding and building complex software systems I
+                    bring a wealth of experience in developing web applications
+                    new production inside, in the shape of Keka and Infeedo
+                    digital landscape playing an important role.
+                </p>
+            </div>
+        </AboutMeSections>
+        <article class="mt-10">
+            <AboutMeSections title="Work Experience">
+                <Experience
+                    title={" Software Engineer | Backend Engineer"}
+                    company={"InFeedo"}
+                    duration={"July 2022 - September 2023"}
+                    type={"Full Time"}
+                    place={"Remote"}
+                />
+                <Experience
+                    title={"Software Engineer | Full Stack and Mobile Apps"}
+                    company={"Keka"}
+                    duration={"August 2021 - July 2022"}
+                    type={"Internship + Full Time"}
+                    place={"Hyderabad, India"}
+                />
+            </AboutMeSections>
+        </article>
+        <article class="mt-10">
+            <AboutMeSections title="Education">
+                <Experience
+                    title={"Bachelors in Computer Science and Engineering"}
+                    company={"Lovely Professional University"}
+                    duration={"Aug 2017 - Aug 2021"}
+                    type={"Full Time"}
+                    place={"Jalandhar, Punjab"}
+                />
+            </AboutMeSections>
+        </article>
+    </section>
+</Layout>
