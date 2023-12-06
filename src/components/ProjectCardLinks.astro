@@ -5,12 +5,12 @@ import GithubSmallIcon from "../icons/GitHubSmallcon.astro";
 ---
 
 <div class="flex flex-row justify-between dark-mode-svg">
-    <div class="flex flex-row items-center">
+    {preview_link && <div class="flex flex-row items-center mr-auto">
         <LinkIcon />
         <a href={preview_link} target="_blank" class="ml-2 underline">Live Preview</a>
-    </div>
-    <div class="flex flex-row items-center mt-auto">
+    </div>}
+    {github_link && <div class="flex flex-row items-center mt-auto ml-auto">
         <GithubSmallIcon />
         <a href={github_link}  target="_blank" class="ml-2 underline">View Code</a>
-    </div>
+    </div>}
 </div>
