@@ -12,14 +12,22 @@ import Css from "../icons/Css.astro";
 import Html from "../icons/Html.astro";
 ---
 
-<section class="dark:text-white  h-[100vh]" id="techstack">
-    <div class="text-center h-[100%]  grid grid-rows-3">
-        <div class="pt-10">
+<style is:global>
+    .logo-grid > svg {
+        margin: 0 auto;
+    }
+</style>
+
+<section class="dark:text-white mt-20 responsive-container" id="techstack">
+    <div class="text-center h-[100%]">
+        <div class="pt-10 mx-5">
             <h1 class="text-5xl my-3 font-bold">My Tech stack</h1>
             <span>Technologies I've been working on currently</span>
         </div>
 
-        <section class="grid grid-cols-6 gap-y-20">
+        <section
+            class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-10 justify-evenly md:justify-start mt-20 logo-grid"
+        >
             <JavascriptLogo />
             <ReactLogo />
             <TailwindLogo />

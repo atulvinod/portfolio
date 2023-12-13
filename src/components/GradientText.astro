@@ -15,6 +15,8 @@ const { text ,classes = '' } = Astro.props;
         -webkit-background-clip: text;
         text-fill-color: transparent;
         -webkit-text-fill-color: transparent;
+        overflow-wrap: anywhere;
+        line-height: normal;
     }
 </style>
 <p class={`text-gradient ${classes}`}>{text}</p>
