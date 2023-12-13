@@ -12,26 +12,26 @@ const { title, company, place, duration, type } = Astro.props;
 </style>
 
 <div class="flex flex-col experience py-5 dark:text-white">
-    <div class="flex flex-row justify-between">
-        <h1>
+    <div class="flex flex-col  lg:flex-row lg:items-center justify-between">
+        <h1 >
             {title}
         </h1>
         <span
-            class="rounded-lg text-[#018C0F] bg-[#D7FFE0] text-center px-5 py-1 text-sm"
+            class="rounded-lg text-[#018C0F] bg-[#D7FFE0] text-center px-5 py-1 text-sm w-fit mt-3"
         >
             {type}
         </span>
     </div>
     <div class="mt-5 text-[12px]">
-        <div class="flex flex-row justify-between">
-            <div class="flex flex-row">
+        <div class="flex flex-col lg:flex-row lg:justify-between">
+            <div class="flex flex-col lg:flex-row">
                 <span class="flex flex-row items-center">
                     <Building />
                     <span class="ml-2">{company}</span>
                 </span>
                 {
                     place && (
-                        <span class="ml-20 flex flex-row items-center">
+                        <span class="flex flex-row items-center lg:ml-6">
                             <Calendar />
                             <span class="ml-2">{place}</span>
                         </span>
@@ -39,7 +39,7 @@ const { title, company, place, duration, type } = Astro.props;
                 }
             </div>
             <div>
-                <span class="ml-5 flex flex-row items-center">
+                <span class=" flex flex-row items-center">
                     <Calendar />
                     <span class="ml-2">{duration}</span>
                 </span>

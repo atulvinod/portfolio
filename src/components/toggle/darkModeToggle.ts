@@ -2,19 +2,26 @@ function setDarkModeTheme() {
     document.documentElement.classList.toggle("dark", true);
 }
 
-function setLightMode() {
+function setLightModeTheme() {
     document.documentElement.classList.toggle("dark", false);
 }
 
+function setLightMode() {
+    setCheckBoxesState("false");
+    setLightModeTheme();
+}
+
 function setDarkMode() {
-    setCheckBoxToDarkMode();
+    setCheckBoxesState("true");
     setDarkModeTheme();
 }
 
-function setCheckBoxToDarkMode() {
-    document
-        .getElementById("dark-mode-toggle")
-        ?.setAttribute("checked", "true");
+function setCheckBoxesState(state: string) {
+    Array.from(document.getElementsByClassName("dm-toggle-checkbox")).forEach(
+        (element) => {
+            element?.setAttribute("checked", state);
+        }
+    );
 }
 
 function handleDarkModeToggle(event: Event) {
@@ -45,9 +52,12 @@ function checkDarkMode() {
 }
 
 function initToggles() {
-    document
-        .getElementById("dark-mode-toggle")
-        ?.addEventListener("change", handleDarkModeToggle);
+    Array.from(document.getElementsByClassName("dm-toggle-checkbox")).forEach(
+        (element) => {
+            element.addEventListener("change", handleDarkModeToggle);
+        }
+    );
+
     checkDarkMode();
 }
 

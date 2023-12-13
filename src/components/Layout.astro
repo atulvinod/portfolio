@@ -11,14 +11,17 @@ import Loader from "./loader/Loader.astro";
     }
     html[class="dark"] .dark-mode-svg path {
         fill: white !important;
+        stroke: white !important;
     }
     html[class="light"] .dark-mode-svg path {
         fill: black !important;
+        stroke: black !important;
     }
 
     .responsive-container {
         width: 100%;
-        margin : 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @media screen and (min-width: 1024px) {
@@ -32,7 +35,6 @@ import Loader from "./loader/Loader.astro";
             width: 91.666667%;
         }
     }
-   
 </style>
 
 <html lang="en">
@@ -59,7 +61,7 @@ import Loader from "./loader/Loader.astro";
         </script>
     </head>
 
-    <body class="dark:bg-gray-900">
+    <body class="dark:bg-gray-900 relative">
         <Loader />
         <main>
             <Navbar />

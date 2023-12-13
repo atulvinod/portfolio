@@ -1,4 +1,7 @@
 ---
+import Cross from "../icons/Cross.astro";
+
+import Hamburger from "../icons/Hamburger.astro";
 import NavbarLinks from "./NavbarLinks.astro";
 import SocialLinks from "./SocialLinks.astro";
 import Toggle from "./toggle/Toggle.astro";
@@ -19,13 +22,59 @@ import Toggle from "./toggle/Toggle.astro";
         left: 0;
     }
 
-    html[class='dark'] .toggle-container::before{
+    html[class="dark"] .toggle-container::before {
         background-color: white;
+    }
+
+    .small-nav-links > li:not(:last-child) {
+        border-bottom: 1px solid lightgrey;
     }
 </style>
 
-<nav class="h-[70px] flex flex-row items-center justify-end  mx-auto hidden">
-    <div class="flex flex-row items-center justify-end w-100">
+<nav class="h-[70px] flex flex-row items-center md:justify-end mx-auto md:mr-5">
+    <div class="md:hidden flex items-start p-5">
+        <div class="px-1 py-2 cursor-pointer dark-mode-svg" id="nav-hamburger">
+            <Hamburger />
+        </div>
+        <div
+            class="absolute h-full w-full top-0 left-0 px-3 bg-white dark:bg-gray-900 hidden"
+            id="nav-overlay"
+        >
+            <div class="flex mt-5 flex-row justify-between">
+                <div class="px-1  cursor-pointer dark-mode-svg" id="nav-close"><Cross /></div>
+                <Toggle />
+            </div>
+            <ul class="list-none flex flex-col small-nav-links">
+                <li
+                    class="px-4 py-10 text-gray-600 flex items-center dark:text-slate-300"
+                >
+                    <a href="/">Home</a>
+                </li>
+                <li
+                    class="px-4 py-10 text-gray-600 flex items-center dark:text-slate-300"
+                >
+                    <a href="/about"> About</a>
+                </li>
+                <li
+                    class="px-4 py-10 text-gray-600 flex items-center dark:text-slate-300"
+                >
+                    <a href="/#techstack">Tech Stack</a>
+                </li>
+                <li
+                    class="px-4 py-10 text-gray-600 flex items-center dark:text-slate-300"
+                >
+                    <a href="/#projects">Projects</a>
+                </li>
+                <li
+                    class="px-4 py-10 text-gray-600 flex items-center dark:text-slate-300"
+                >
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="flex flex-row items-center w-100 max-md:hidden">
         <NavbarLinks />
         <SocialLinks />
 
@@ -34,3 +83,29 @@ import Toggle from "./toggle/Toggle.astro";
         </div>
     </div>
 </nav>
+
+<script >
+function initHanlders(){
+    document.addEventListener("astro:after-preparation", () => {
+        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
+            "none";
+    });
+
+    document.querySelector("#nav-hamburger")?.addEventListener("click", () => {
+        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
+            "block";
+    });
+    
+    document.querySelector("#nav-close")?.addEventListener("click", () => {
+        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
+            "none";
+    });
+    
+    
+}
+
+document.addEventListener("astro:after-swap", function () {
+    initHanlders()
+})
+initHanlders();
+</script>

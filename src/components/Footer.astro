@@ -3,19 +3,21 @@ import NavbarLinks from "./NavbarLinks.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<footer class="dark:text-white  mt-[10rem] hidden">
+<footer class="dark:text-white  mt-[10rem] ">
     <div>
-        <div class="flex flex-row justify-end items-center">
-            <span class="mx-10"> +91 7889771639</span>
-            <span class="mx-20"
+        <div class="flex md:flex-row flex-col  justify-end  items-start md:items-center">
+            <span class="md:mx-10 ml-5 my-2"> +91 7889771639</span>
+            <span class="md:mx-20 ml-5 my-2"
                 ><a href="mailto:atulvinod1911@gmail.com"
                     >atulvinod1911@gmail.com</a
                 ></span
             >
-            <SocialLinks />
+            <div class="mt-2">
+                <SocialLinks />
+            </div>
         </div>
         <hr class="w-100 my-10" />
-        <div class="flex mb-10">
+        <div class="flex justify-center lg:justify-end mb-10">
             <NavbarLinks />
         </div>
     </div>

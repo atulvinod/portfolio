@@ -1,4 +1,4 @@
-.toggle-checkbox {
+.dm-toggle-checkbox {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -32,7 +32,7 @@
     transition: 0.3s;
 }
 
-.toggle-checkbox:checked + .toggle-switch {
+.dm-toggle-checkbox:checked + .toggle-switch {
     background-color: #d3d4d9;
 }
 
@@ -40,7 +40,7 @@
     background-color: black;
 }
 
-.toggle-checkbox:checked + .toggle-switch::before {
+.dm-toggle-checkbox:checked + .toggle-switch::before {
     content: "";
     left: 29px;
     color: #0075ff;
