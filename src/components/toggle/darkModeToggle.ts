@@ -7,19 +7,19 @@ function setLightModeTheme() {
 }
 
 function setLightMode() {
-    setCheckBoxesState("false");
+    setCheckBoxesState(false);
     setLightModeTheme();
 }
 
 function setDarkMode() {
-    setCheckBoxesState("true");
+    setCheckBoxesState(true);
     setDarkModeTheme();
 }
 
-function setCheckBoxesState(state: string) {
+function setCheckBoxesState(state: boolean) {
     Array.from(document.getElementsByClassName("dm-toggle-checkbox")).forEach(
         (element) => {
-            element?.setAttribute("checked", state);
+            (element as HTMLInputElement).checked = state;
         }
     );
 }
@@ -28,7 +28,7 @@ function handleDarkModeToggle(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     const isChecked = checkbox.checked;
     if (isChecked) {
-        setDarkModeTheme();
+        setDarkMode();
         localStorage.setItem("theme", "dark");
     } else {
         setLightMode();
