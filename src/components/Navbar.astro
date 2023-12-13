@@ -85,20 +85,28 @@ import Toggle from "./toggle/Toggle.astro";
 </nav>
 
 <script >
+function setOverlayDisplayState(state:string){
+    (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
+            state
+}
+
 function initHanlders(){
+    document.querySelectorAll('.small-nav-links a').forEach((element)=>{
+        element.addEventListener('click', ()=>{
+            setOverlayDisplayState('none')
+        })
+    })
+
     document.addEventListener("astro:after-preparation", () => {
-        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
-            "none";
+        setOverlayDisplayState('none')
     });
 
     document.querySelector("#nav-hamburger")?.addEventListener("click", () => {
-        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
-            "block";
+       setOverlayDisplayState('block')
     });
     
     document.querySelector("#nav-close")?.addEventListener("click", () => {
-        (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
-            "none";
+       setOverlayDisplayState('none')
     });
     
     
