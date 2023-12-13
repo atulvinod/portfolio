@@ -1,0 +1,75 @@
+---
+import Cross from "../../icons/Cross.astro";
+
+import Hamburger from "../../icons/Hamburger.astro";
+import NavbarLinks from "./NavbarLinks.astro";
+import NavbarSmall from "./NavbarSmall.astro";
+import SocialLinks from "./SocialLinks.astro";
+import Toggle from "../toggle/Toggle.astro";
+---
+
+<style>
+    .toggle-container {
+        position: relative;
+    }
+    .toggle-container::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        display: block;
+        top: 0;
+        left: 0;
+    }
+
+    html[class="dark"] .toggle-container::before {
+        background-color: white;
+    }
+</style>
+
+<nav class="h-[70px] flex flex-row items-center md:justify-end mx-auto md:mr-5">
+   <NavbarSmall/>
+    <div class="flex flex-row items-center w-100 max-md:hidden">
+        <NavbarLinks />
+        <SocialLinks />
+
+        <div class="pl-5 ml-5 toggle-container">
+            <Toggle />
+        </div>
+    </div>
+</nav>
+
+<script >
+function setOverlayDisplayState(state:string){
+    (document.querySelector("#nav-overlay") as HTMLElement ).style.display =
+            state
+}
+
+function initHanlders(){
+    document.querySelectorAll('.small-nav-links a').forEach((element)=>{
+        element.addEventListener('click', ()=>{
+            setOverlayDisplayState('none')
+        })
+    })
+
+    document.addEventListener("astro:after-preparation", () => {
+        setOverlayDisplayState('none')
+    });
+
+    document.querySelector("#nav-hamburger")?.addEventListener("click", () => {
+       setOverlayDisplayState('block')
+    });
+    
+    document.querySelector("#nav-close")?.addEventListener("click", () => {
+       setOverlayDisplayState('none')
+    });
+    
+    
+}
+
+document.addEventListener("astro:after-swap", function () {
+    initHanlders()
+})
+initHanlders();
+</script>

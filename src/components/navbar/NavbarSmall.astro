@@ -1,0 +1,55 @@
+---
+import Cross from "../../icons/Cross.astro";
+import Hamburger from "../../icons/Hamburger.astro";
+import Toggle from "../toggle/Toggle.astro";
+---
+
+<style>
+    .small-nav-links > li:not(:last-child) {
+        border-bottom: 1px solid lightgrey;
+    }
+</style>
+
+<div class="md:hidden flex items-start p-5">
+    <div class="px-1 py-2 cursor-pointer dark-mode-svg" id="nav-hamburger">
+        <Hamburger />
+    </div>
+    <div
+        class="absolute h-full w-full top-0 left-0 px-3 bg-white dark:bg-gray-900 hidden"
+        id="nav-overlay"
+    >
+        <div class="flex mt-5 flex-row justify-between">
+            <div class="px-1 cursor-pointer dark-mode-svg" id="nav-close">
+                <Cross />
+            </div>
+            <Toggle />
+        </div>
+        <ul class="list-none flex flex-col small-nav-links">
+            <li
+                class="px-4 py-10 text-gray-600 flex items-center dark:text-white text-lg cursor-pointer"
+            >
+                <a href="/">Home</a>
+            </li>
+            <li
+                class="px-4 py-10 text-gray-600 flex items-center dark:text-white text-lg cursor-pointer"
+            >
+                <a href="/about"> About</a>
+            </li>
+            <li
+                class="px-4 py-10 text-gray-600 flex items-center dark:text-white text-lg cursor-pointer"
+            >
+                <a href="/#techstack">Tech Stack</a>
+            </li>
+            <li
+                class="px-4 py-10 text-gray-600 flex items-center dark:text-white text-lg cursor-pointer"
+            >
+                <a href="/#projects">Projects</a>
+            </li>
+            <li
+                class="px-4 py-10 text-gray-600 flex items-center dark:text-white text-lg cursor-pointer"
+            >
+                <a href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
