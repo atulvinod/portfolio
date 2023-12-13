@@ -3,14 +3,12 @@ import GradientText from "./GradientText.astro";
 ---
 
 <style>
-    #home {
-        height: calc(100vh - 70px);
-    }
+
     .text-gradient {
         color: #a195e3;
         background-image: -webkit-linear-gradient(
             45deg,
-            #a195e3 0%,
+        #a195e3 0%,
             #1739e1 33%,
             #07a8fd 67%
         );
@@ -20,9 +18,9 @@ import GradientText from "./GradientText.astro";
         -webkit-text-fill-color: transparent;
     }
 </style>
-<section id="home">
+<section id="home" class="responsive-container">
     <div
-        class="'' mx-auto text-6xl dark:text-white py-[7%] font-semibold leading-tight"
+        class="'' mx-5 text-6xl dark:text-white py-[7%] font-semibold leading-tight"
     >
         <p>
             <p>Hi👋,</p>

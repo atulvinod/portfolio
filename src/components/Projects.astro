@@ -8,22 +8,17 @@ import qa from "../images/qa.png";
 ---
 
 <style>
-    .project-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 500px 500px;
-        gap: 40px;
-    }
+   
 </style>
 
-<section class="dark:text-white flex justify-evenly" id="projects">
+<section class="dark:text-white flex justify-evenly mt-20" id="projects">
     <div class="text-center ''">
         <div class="pt-10">
             <h1 class="text-5xl my-3 font-bold">Projects</h1>
             <span>Things I've built so far</span>
         </div>
 
-        <section class="project-grid mt-20">
+        <section class="flex flex-wrap  mt-20 md:w-10/12 mx-auto lg:w-full">
             <ProjectCard
                 title={"Thullo | Kanban Board"}
                 description={"A Kanban board with ability to assign tasks to teams, create new taskboards, multi-column layout and ability to drag and drop cards"}

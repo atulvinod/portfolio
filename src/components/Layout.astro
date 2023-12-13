@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import { ViewTransitions } from "astro:transitions";
-import Loader from './loader/Loader.astro';
+import Loader from "./loader/Loader.astro";
 ---
 
 <style is:global>
@@ -15,6 +15,24 @@ import Loader from './loader/Loader.astro';
     html[class="light"] .dark-mode-svg path {
         fill: black !important;
     }
+
+    .responsive-container {
+        width: 100%;
+        margin : 0 auto;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .responsive-container {
+            width: 75%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .responsive-container {
+            width: 91.666667%;
+        }
+    }
+   
 </style>
 
 <html lang="en">
@@ -42,21 +60,29 @@ import Loader from './loader/Loader.astro';
     </head>
 
     <body class="dark:bg-gray-900">
-        <Loader/>
-        <main class="w-10/12 mx-auto">
+        <Loader />
+        <main>
             <Navbar />
             <slot />
             <Footer />
         </main>
     </body>
     <script is:inline>
-        document.addEventListener('astro:before-preparation', () => {
-          document.querySelector('#loader-container').classList.toggle('visible', true);
-          document.querySelector('#loader-container').classList.toggle('invisible', false);
+        document.addEventListener("astro:before-preparation", () => {
+            document
+                .querySelector("#loader-container")
+                .classList.toggle("visible", true);
+            document
+                .querySelector("#loader-container")
+                .classList.toggle("invisible", false);
         });
-        document.addEventListener('astro:after-preparation', () => {
-            document.querySelector('#loader-container').classList.toggle('visible', false);
-          document.querySelector('#loader-container').classList.toggle('invisible', true);
+        document.addEventListener("astro:after-preparation", () => {
+            document
+                .querySelector("#loader-container")
+                .classList.toggle("visible", false);
+            document
+                .querySelector("#loader-container")
+                .classList.toggle("invisible", true);
         });
-      </script>
+    </script>
 </html>
