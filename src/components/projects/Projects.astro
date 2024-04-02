@@ -6,11 +6,10 @@ import store from "../../images/store.png";
 import thullo from "../../images/thullo.png";
 import qa from "../../images/qa.png";
 import opentable from "../../images/opentable.png";
+import botbuilder from "../../images/botbuilder.png";
 ---
 
-<style>
-   
-</style>
+<style></style>
 
 <section class="dark:text-white flex justify-evenly mt-20 mx-2" id="projects">
     <div class="text-center ''">
@@ -19,7 +18,27 @@ import opentable from "../../images/opentable.png";
             <span>Things I've built so far</span>
         </div>
 
-        <section class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-20 md:w-10/12 mx-auto ">
+        <section
+            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-20 md:w-10/12 mx-auto"
+        >
+            <ProjectCard
+                title={"Botmaker | RAG GPT Chatbot builder"}
+                description={"A simple to use platform where users can build their own chatbots based on their own training data for contextual responses"}
+                preview_link={"https://bot-builder-henna.vercel.app/"}
+                github_link={"https://github.com/atulvinod/bot-builder"}
+                image={botbuilder}
+                image_alt={"thullo store preview"}
+                tech={[
+                    "Flask",
+                    "Microservices",
+                    "LlamaIndex",
+                    "Docker",
+                    "Next.js",
+                    "PostgreSQL",
+                    "OpenAI",
+                    "Fastify",
+                ]}
+            />
             <ProjectCard
                 title={"Thullo | Kanban Board"}
                 description={"A Kanban board with ability to assign tasks to teams, create new taskboards, multi-column layout and ability to drag and drop cards"}
@@ -27,17 +46,17 @@ import opentable from "../../images/opentable.png";
                 github_link={"https://github.com/atulvinod/thullo"}
                 image={thullo}
                 image_alt={"thullo store preview"}
-                tech={['React','Docker','Express.js','MySQL']}
+                tech={["React", "Docker", "Express.js", "MySQL"]}
             />
             <ProjectCard
-            title={"Opentable"}
-            description={"An opentable clone used to find restaurants and reservations"}
-            preview_link={"https://learn-next-reservation-nrhg66tk9-atul-vinods-projects.vercel.app/"}
-            github_link={"https://github.com/atulvinod/learn-next-reservation-app"}
-            image={opentable}
-            image_alt={"opentable"}
-            tech={['Next.js','PostgresSQL']}
-        />
+                title={"Opentable"}
+                description={"An opentable clone used to find restaurants and reservations"}
+                preview_link={"https://learn-next-reservation-nrhg66tk9-atul-vinods-projects.vercel.app/"}
+                github_link={"https://github.com/atulvinod/learn-next-reservation-app"}
+                image={opentable}
+                image_alt={"opentable"}
+                tech={["Next.js", "PostgresSQL"]}
+            />
             <ProjectCard
                 title={"MNTN Travel"}
                 description={"A landing page for a travel company"}
@@ -45,7 +64,7 @@ import opentable from "../../images/opentable.png";
                 github_link={"https://github.com/atulvinod/mntn-website"}
                 image={mntn}
                 image_alt={"mntn website preview"}
-                tech={['HTML','Sass']}
+                tech={["HTML", "Sass"]}
             />
             <ProjectCard
                 title={"NASA Website"}
@@ -54,7 +73,7 @@ import opentable from "../../images/opentable.png";
                 github_link={"https://github.com/atulvinod/space-tourism"}
                 image={space}
                 image_alt={"Space website preview"}
-                tech={['React','Sass']}
+                tech={["React", "Sass"]}
             />
             <ProjectCard
                 title={"CRWN clothing store"}
@@ -63,17 +82,16 @@ import opentable from "../../images/opentable.png";
                 github_link={"https://github.com/atulvinod/crwn-clothing"}
                 image={store}
                 image_alt={"CRWN clothing store preview"}
-                tech={['React','Redux','Redux Saga','Firebase']}
-
+                tech={["React", "Redux", "Redux Saga", "Firebase"]}
             />
             <ProjectCard
-            title={"Question Answer platform"}
-            description={"A quora clone where people can ask questions and get answers"}
-            github_link={"https://github.com/atulvinod/corporateQna"}
-            image={qa}
-            image_alt={"qa screenshot"}
-            tech={['Angular','.NET 5','SQL Server','Docker']}
-        />
+                title={"Question Answer platform"}
+                description={"A quora clone where people can ask questions and get answers"}
+                github_link={"https://github.com/atulvinod/corporateQna"}
+                image={qa}
+                image_alt={"qa screenshot"}
+                tech={["Angular", ".NET 5", "SQL Server", "Docker"]}
+            />
         </section>
     </div>
 </section>
